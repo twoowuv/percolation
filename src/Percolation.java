@@ -15,7 +15,7 @@ public class Percolation {
     private int bottom;
     private boolean[] openNodes;
 
-    Percolation(int N) {
+    public Percolation(int N) {
         if (N < 1) {
             throw new java.lang.IllegalArgumentException("N cannot be less than 1");
         }
@@ -139,7 +139,7 @@ public class Percolation {
      *
      * @returns boolean
      */
-    public boolean isInBounds(int i, int j) {
+    private boolean isInBounds(int i, int j) {
         return i > 0
                 && j > 0
                 && i <= N
@@ -149,7 +149,7 @@ public class Percolation {
     /**
      * Throws an exception if the coords are outside of the grid
      */
-    public void doInBoundsCheck(int i, int j) {
+    private void doInBoundsCheck(int i, int j) {
         if (!isInBounds(i, j)) {
             throw new IndexOutOfBoundsException("Values not in bounds for a " + N + " x " + N + " grid");
         }
